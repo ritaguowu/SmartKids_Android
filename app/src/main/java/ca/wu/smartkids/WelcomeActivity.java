@@ -1,6 +1,7 @@
 package ca.wu.smartkids;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
 
 import android.content.Intent;
 import android.graphics.Typeface;
@@ -12,29 +13,26 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
 
+import ca.wu.smartkids.databinding.ActivityWelcomeBinding;
+
 public class WelcomeActivity extends AppCompatActivity implements View.OnClickListener{
 
-    TextView tvAppName, tvSignInIntro, tvLogo;
+    private ActivityWelcomeBinding binding;
 
     private Button btnSignupIntro;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_welcome);
-
-        btnSignupIntro = findViewById(R.id.btnSignup);
-        tvSignInIntro = findViewById(R.id.tvSignIn);
-        tvAppName = findViewById(R.id.tvAppName);
-        tvLogo = findViewById(R.id.tvLogo);
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_welcome);
 
         //Use font downloaded from below website:
         // https://www.1001fonts.com/free-for-commercial-use-fonts.html
         Typeface typeFace = Typeface.createFromAsset(getAssets(), "sacramento.ttf");
-        tvAppName.setTypeface(typeFace);
+        binding.tvAppName.setTypeface(typeFace);
 
 
         Typeface typeFaceLogo = Typeface.createFromAsset(getAssets(), "BLKCHCRY.TTF");
-        tvLogo.setTypeface(typeFaceLogo);
+        binding.tvLogo.setTypeface(typeFaceLogo);
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
             getWindow().getInsetsController().hide(WindowInsets.Type.statusBars());
@@ -44,8 +42,8 @@ public class WelcomeActivity extends AppCompatActivity implements View.OnClickLi
                     WindowManager.LayoutParams.FLAG_FULLSCREEN
             );
         }
-        tvSignInIntro.setOnClickListener(this);
-        btnSignupIntro.setOnClickListener(this);
+        binding.tvSignIn.setOnClickListener(this);
+        binding.btnSignup.setOnClickListener(this);
 
     }
 

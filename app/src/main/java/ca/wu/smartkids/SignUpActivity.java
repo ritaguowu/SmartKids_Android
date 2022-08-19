@@ -2,6 +2,7 @@ package ca.wu.smartkids;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.databinding.DataBindingUtil;
 
 import android.os.Build;
 import android.os.Bundle;
@@ -9,14 +10,16 @@ import android.view.View;
 import android.view.WindowInsets;
 import android.view.WindowManager;
 
+import ca.wu.smartkids.databinding.ActivitySignUpBinding;
+
 
 public class SignUpActivity extends AppCompatActivity {
-    Toolbar toolbarSignupActivity;
+    private ActivitySignUpBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sign_up);
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_sign_up);
 
         //Make app use full screen
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
@@ -27,20 +30,21 @@ public class SignUpActivity extends AppCompatActivity {
                     WindowManager.LayoutParams.FLAG_FULLSCREEN
             );
         }
-        toolbarSignupActivity = (Toolbar) findViewById(R.id.toolbarSignupActivity);
 
         setupActionBar();
 
     }
 
-    private void setupActionBar() {
-        setSupportActionBar(toolbarSignupActivity);
-        toolbarSignupActivity.setNavigationIcon(R.drawable.ic_black_back_24dp);
-        toolbarSignupActivity.setNavigationOnClickListener(new View.OnClickListener() {
+    private void setupActionBar(){
+        setSupportActionBar(binding.toolbarSignupActivity);
+        binding.toolbarSignupActivity.setNavigationIcon(R.drawable.ic_black_back_24dp);
+        binding.toolbarSignupActivity.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 onBackPressed();
             }
         });
     }
+
+
 }

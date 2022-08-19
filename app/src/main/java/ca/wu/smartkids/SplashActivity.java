@@ -1,6 +1,7 @@
 package ca.wu.smartkids;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
 
 import android.content.Intent;
 import android.graphics.Typeface;
@@ -12,15 +13,16 @@ import android.view.WindowInsets;
 import android.view.WindowManager;
 import android.widget.TextView;
 
+import ca.wu.smartkids.databinding.ActivitySplashBinding;
+
 
 public class SplashActivity extends AppCompatActivity {
-    TextView tvAppName;
+    private ActivitySplashBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_splash);
-        tvAppName = findViewById(R.id.tvAppName);
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_splash);
 
         //Make app use full screen
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
@@ -35,7 +37,7 @@ public class SplashActivity extends AppCompatActivity {
         //Use font downloaded from below website:
 //        // https://www.1001fonts.com/free-for-commercial-use-fonts.html
         Typeface typeFace = Typeface.createFromAsset(getAssets(), "sacramento.ttf");
-        tvAppName.setTypeface(typeFace);
+        binding.tvAppName.setTypeface(typeFace);
 
 
         //Jump to IntroActivity after 2.5s
