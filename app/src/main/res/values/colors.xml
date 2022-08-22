@@ -11,6 +11,8 @@
     <color name="colorPrimary">#0C90F1</color>
     <color name="colorPrimaryDark">#0591F8</color>
     <color name="colorAccent">#0C90F1</color>
+    <color name="yellowPrimary">#FBC02D</color>
+    <color name="yellowSecondary">#FFEB3B</color>
 
     <color name="primary_text_color">#363A43</color>
     <color name="secondary_text_color">#7A8089</color>
@@ -19,4 +21,9 @@
     <color name="light_blue_A200">#FF40C4FF</color>
     <color name="light_blue_A400">#FF00B0FF</color>
     <color name="black_overlay">#66000000</color>
+
+    <color name="circular_image_border_color">#757575</color>
+    <color name="item_description_text_color">#FFFFF0</color>
+
+
 </resources>

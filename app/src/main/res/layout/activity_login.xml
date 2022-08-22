@@ -108,6 +108,15 @@
                     android:textColor="@android:color/white"
                     android:textSize="@dimen/btn_text_size" />
             </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvLoginResult"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:textSize="15sp">
+
+            </TextView>
         </androidx.cardview.widget.CardView>
     </LinearLayout>
 </LinearLayout>

@@ -27,4 +27,16 @@
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
 
+    <string name="image_content_description">image</string>
+
+    <!--Fragment_kids -->
+    <string name="no_kids_found_yet">No kids found yet!</string>
+    <string name="add">add</string>
+
+    <!--Fragment_add_kid -->
+    <string name="add_kid_text">Enter your name, choose your image, join with us!</string>
+    <string name="add_kid">Add Kid</string>
+    <string name="text_add_image">ADD IMAGE</string>
+
+
 </resources>

@@ -1,7 +1,10 @@
-package ca.wu.smartkids.api;
+package ca.wu.smartkids.retrofit;
 
 import java.util.List;
 
+import ca.wu.smartkids.model.LoginBody;
+import ca.wu.smartkids.model.LoginResponse;
+import ca.wu.smartkids.model.User;
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.DELETE;
@@ -10,10 +13,13 @@ import retrofit2.http.POST;
 import retrofit2.http.PUT;
 import retrofit2.http.Path;
 
-public interface ApiInterface {
+public interface ILoginService {
 
-    @POST("/auth")
-    Call<User> getToken(@Body User user);
+    @POST("/api/v1/auth")
+    Call<LoginResponse> login(@Body LoginBody loginBody);
+
+//    @POST("/auth")
+//    Call<User> getToken(@Body User user);
 
     @POST("/parent")
     Call<User> signup(@Body User user);
@@ -32,5 +38,4 @@ public interface ApiInterface {
 
     @DELETE("/kid/{email}&{kid_name}")
     Call<List<User>> deleteKid(@Path("email") String email);
-
 }
